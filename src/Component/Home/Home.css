@@ -1,0 +1,13 @@
+.carousel-caption {
+    position: absolute;
+  
+    top: 7rem;
+  left: -48%;
+    
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+.carousel-caption h1{
+    font-size: 50px;
+    font-weight: 800;
+}
