@@ -1,7 +1,67 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import { Button, NavLink} from 'react-bootstrap';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import auth from '../../firebase.init';
 import './LogIn.css'
 
 const LogIn = () => {
+    
+    const [Error ,setError]=useState('')
+    const emailRef = useRef('');
+    const navigate=useNavigate()
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+   
+    //  ========================logIn with Email and password start====================
+    const [
+      signInWithEmailAndPassword,
+      user,
+      loading,
+      error,
+    ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(
+      auth
+    );
+    
+  
+    const handleSubmitSignIn=(event)=>{
+      event.preventDefault();
+     
+      const email=event.target.email.value;
+      const password=event.target.password.value;
+      signInWithEmailAndPassword(email,password)
+      
+      console.log(email , password);
+      if(loading){
+        return  loading;
+      }
+       if(user){
+        navigate(from, { replace: true });
+  
+       
+          }
+         
+     if (error ) {
+      setError(error?.message)
+         console.log(Error);
+     }
+   }
+   const resetPassword=async (event)=>{
+    const email=emailRef.current.value;
+    if(email){
+      sendPasswordResetEmail(email)
+      toast ('Email sent')
+    }
+    else{
+        toast ('wirte your email first')
+    }
+    
+   }
+  
     return (
         <div >
         <div className="login-1">
@@ -12,9 +72,9 @@ const LogIn = () => {
                     <div className="form-inner">
                         
                         <h3>Sign Into Your Account</h3>
-                        <form action="#" method="GET">
+                        <form onSubmit={handleSubmitSignIn}>
                             <div className="form-group form-box clearfix">
-                                <input name="email" type="email" className="form-control" placeholder="Email Address" aria-label="Email Address"/>
+                                <input name="email" ref={emailRef} type="email" className="form-control" placeholder="Email Address" aria-label="Email Address"/>
                                
                             </div>
                             <div className="form-group form-box clearfix">
@@ -28,24 +88,28 @@ const LogIn = () => {
                                         Remember me
                                     </label>
                                 </div>
-                                <a href="forgot-password-1.html" className="link-light float-end forgot-password">Forgot your password?</a>
+                               
+                             
                             </div>
                             <div className="form-group">
                                 <button type="submit" className="btn btn-primary btn-lg btn-theme"><span>Login</span></button>
+                            
                             </div>
+                            <p style={{color:"red"}}> { Error }</p>
                             <div className="extra-login form-group clearfix">
                                 <span>Or Login With</span>
                             </div>
                         </form>
                         <div className="clearfix"></div>
-                       <p>Don't have an account? <a href="register-1.html" className="thembo"> Register here</a></p>
+                       <p>Don't have an account? <Link style={{color:"blue"}} to={"/signUp"}>Register here</Link></p>
+                       <Link onClick={resetPassword} style={{color:"blue"}} to={""}>Forgot your password?</Link>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-           
+<ToastContainer></ToastContainer> 
         </div>
     );
 };

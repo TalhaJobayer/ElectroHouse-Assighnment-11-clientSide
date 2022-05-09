@@ -1,9 +1,54 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './SignUp.css'
+import auth from '../../firebase.init';
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
+    const [Error ,setError]=useState('')
+  const [updateProfile] = useUpdateProfile(auth);
+  const navigate=useNavigate();
+  const [sendEmailVerification, sending] = useSendEmailVerification(auth);
+// =====================createUserWithEmailAndPassword====================
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth);
+
+  const handleSubmit=(event)=>{
+     event.preventDefault()
+     const name=event.target.name.value;
+     const email=event.target.email.value;
+     const password=event.target.password.value;
+     createUserWithEmailAndPassword(email,password)
+     console.log(user);
+     updateProfile({displayName:name})
+     console.log(email , password);
+     
+    
+     if( loading){
+       return loading;
+     }
+     if (error ) {
+      setError(error?.message)
+         console.log(Error);
+     }
+    if(user){
+     
+      sendEmailVerification()
+      alert('Sent email');
+      navigate('/')
+    }
+    
+    
+     
+  }
     return (
         <div>
+           
            <div className="login-1">
     <div className="container">
         <div className="row">
@@ -12,7 +57,7 @@ const SignUp = () => {
                     <div className="form-inner">
                        
                         <h3>Create An Cccount</h3>
-                        <form action="#" method="GET">
+                        <form  onSubmit={handleSubmit} >
                             <div className="form-group form-box">
                                 <input name="name" type="text" className="form-control" placeholder="Full Name" aria-label="Full Name"/>
                                
@@ -38,19 +83,22 @@ const SignUp = () => {
                             <div className="form-group">
                                 <button type="submit" className="btn btn-primary btn-lg btn-theme"><span>Register</span></button>
                             </div>
+                            <p style={{color:"red"}}>{Error}</p>
+   <br />
                             <div className="extra-login form-group clearfix">
                                 <span>Or Login With</span>
                             </div>
                         </form>
                         <div className="clearfix"></div>
                         
-                        <p>Already a member? <a href="login-1.html">Login here</a></p>
+                        <p>Already a member? <Link style={{color:"blue"}} to={"/Login"}>Login</Link></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+          
         </div>
     );
 };

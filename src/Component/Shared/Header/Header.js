@@ -3,8 +3,19 @@ import { Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css'
 import MenuLogo from '../../../Images/kisspng-electricity-computer-icons-symbol-company-electric-electric-5abdc00c68c5a8.0630823215223849084292.jpg'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
+  const [
+   
+    user,
+    
+  ] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+  };
     return (
         <div>
           
@@ -26,8 +37,15 @@ const Header = () => {
     <Nav className='menuText'>
      
       <Link  to={'/upadateProduct'} >Update</Link>
-      <Link  to={'/logIn'} >LogIn</Link>
-      <Link to={'/signUp'} >SignUp</Link>
+      
+        {
+          user?<Link  onClick={ logout} to={'/logIn'} >Log Out</Link>: <Link  to={'/logIn'} >LogIn</Link>
+        }
+      
+     
+      {
+        user?'':<Link to={'/signUp'} >SignUp</Link>
+      }
     </Nav>
   </Navbar.Collapse>
   </Container>
