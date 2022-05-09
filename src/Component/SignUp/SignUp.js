@@ -5,6 +5,7 @@ import './SignUp.css'
 import auth from '../../firebase.init';
 import { updateProfile } from 'firebase/auth';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import Loading from '../Shared/Loading/Loading';
 
 const SignUp = () => {
     const [Error ,setError]=useState('')
@@ -31,7 +32,7 @@ const SignUp = () => {
      
     
      if( loading){
-       return loading;
+       return <Loading></Loading>;
      }
      if (error ) {
       setError(error?.message)

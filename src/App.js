@@ -11,6 +11,9 @@ import Products from './Component/Products/Products';
 import Product from './Component/Home/Product/Product';
 import UpdateProducts from './Component/Admin/UpdateProducts/UpdateProducts';
 import SocialLogin from './Component/Shared/SocialLogin/SocialLogin';
+import ProductDetails from './Component/ProductDetails/ProductDetails';
+import RequireAuth from './Component/Shared/RequireAuth/RequireAuth';
+import ProccedToPay from './Component/ProccedToPay/ProccedToPay';
 
 function App() {
   return (
@@ -22,7 +25,15 @@ function App() {
         <Route path='/products' element={<Products></Products>}></Route> 
         <Route path='/product' element={<Product></Product>}></Route> 
         <Route path='/updateProduct' element={<UpdateProducts></UpdateProducts>}></Route> 
+        <Route path='/ProductDetails/:ProductId' element={
+         
+            <ProductDetails></ProductDetails>
+         
+        }></Route>
 
+
+        
+        <Route path='/proccedToPay' element={<ProccedToPay></ProccedToPay>}></Route> 
         <Route path='/about' element={<About></About>}></Route> 
         <Route path='/logIn' element={<LogIn></LogIn>}></Route> 
         <Route path='/signUp' element={<SignUp></SignUp>}></Route> 
