@@ -1,4 +1,5 @@
 import React from 'react';
+import MenuLogo from '../../../Images/kisspng-electricity-computer-icons-symbol-company-electric-electric-5abdc00c68c5a8.0630823215223849084292.jpg'
 
 const Footer = () => {
     return (
@@ -9,16 +10,15 @@ const Footer = () => {
   <section className="">
     <div className="container text-center text-md-start ">
       
-      <div className="row mt-0">
+      <div className="row pt-3">
         
         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           
           <h6 className="text-uppercase fw-bold mb-4">
-            <i className="fas fa-gem me-3"></i>Company name
+          <img className='logo' src={MenuLogo} alt="" /> Electro House
           </h6>
           <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
+            Here you can buy any kind of Gadgets
           </p>
         </div>
         
@@ -55,13 +55,13 @@ const Footer = () => {
           <h6 className="text-uppercase fw-bold mb-4">
             Contact
           </h6>
-          <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p> Joypurhat sadar,Rajshahi,bangladesh</p>
           <p>
-            <i className="fas fa-envelope me-3"></i>
-            info@example.com
+            
+            Talhajobayer8@gmail.com
           </p>
-          <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p> 017***********</p>
+          <p> 017***********</p>
         </div>
         
       </div>

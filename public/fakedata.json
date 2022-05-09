@@ -1,0 +1,45 @@
+[
+    {
+    "name": "Movie Projector HD Outdoor",
+    "image": "https://andshop-react.netlify.app/static/media/1.0dc75df3.jpg",
+    "Price": "3000.00",
+    "quantity":"5",
+     "supplier":"Electro house"
+  }, 
+    {
+    "name": "Bopmen T3 Ear Headphones",
+    "image": "https://andshop-react.netlify.app/static/media/2.0e01aae4.jpg",
+    "Price": "450.00",
+    "quantity":"5",
+     "supplier":"Electro house"
+  }, 
+    {
+    "name": "Belkin Boost Up Power Pack",
+    "image": "https://andshop-react.netlify.app/static/media/3.63bfd30e.jpg",
+    "Price": "300.00",
+    "quantity":"5",
+     "supplier":"Electro house"
+  }, 
+    {
+    "name": "Fossil Men's Quartz Watch",
+    "image": "https://andshop-react.netlify.app/static/media/4.bc52b1fc.jpg",
+    "Price": "2000.00",
+    "quantity":"5",
+     "supplier":"Electro house"
+  }, 
+    {
+    "name": "Powerbeats Pro Wireless Earbuds",
+    "image": "https://andshop-react.netlify.app/static/media/5.8b2afde4.jpg",
+    "Price": "200.00",
+    "quantity":"5",
+     "supplier":"Electro house"
+  }, 
+    {
+    "name": "New Apple AirPods Max",
+    "image": "https://andshop-react.netlify.app/static/media/6.15c9ff1f.jpg",
+    "Price": "400.00",
+    "quantity":"5",
+     "supplier":"Electro house"
+  }
+  ]
+  

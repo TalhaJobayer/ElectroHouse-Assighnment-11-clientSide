@@ -4,6 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import banner1 from '../../../src/Images/banner1.b0493f1f.png'
 import banner2 from '../../../src/Images/banner2.1b49a4df.png'
 import banner3 from '../../../src/Images/banner3.075bbb83.png'
+import Products from '../Products/Products';
 import './Home.css'
 
 const Home = () => {
@@ -64,6 +65,9 @@ const Home = () => {
 </Carousel>
 {/* carousol done========================================================
 =================================================================== */}
+   {/* =products======== */}
+   <Products></Products>
+   {/* =products======== */}
 
         </div>
     );
