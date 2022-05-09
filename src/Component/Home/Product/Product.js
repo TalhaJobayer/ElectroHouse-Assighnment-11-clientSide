@@ -9,7 +9,7 @@ const Product = ({product}) => {
     const handleSingleDetailes=id=>{
       Navigate(`/ProductDetails/${id}`)
     }
-    console.log(handleSingleDetailes);
+    
     return (
         <div className='col-lg-4 g-3'>
             <div className="card" >

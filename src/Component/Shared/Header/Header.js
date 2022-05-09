@@ -36,7 +36,18 @@ const Header = () => {
     </Nav>
     <Nav className='menuText'>
      
-      <Link  to={'/upadateProduct'} >Update</Link>
+      
+      {
+          user?<Link  to={'/ManageItems'} >Manage Items</Link>: ''
+        }
+      {
+          user?<Link  to={'/MyItems'} >My Items</Link>: ''
+        }
+      {
+          user?<Link  to={'/AddItems'} >Add Items</Link>: ''
+        }
+      
+      
       
         {
           user?<Link  onClick={ logout} to={'/logIn'} >Log Out</Link>: <Link  to={'/logIn'} >LogIn</Link>

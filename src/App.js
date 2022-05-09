@@ -14,6 +14,9 @@ import SocialLogin from './Component/Shared/SocialLogin/SocialLogin';
 import ProductDetails from './Component/ProductDetails/ProductDetails';
 import RequireAuth from './Component/Shared/RequireAuth/RequireAuth';
 import ProccedToPay from './Component/ProccedToPay/ProccedToPay';
+import MyItems from './Component/Admin/MyItems/MyItems';
+import AddItems from './Component/Admin/AddItems/AddItems';
+import NotFound from './Component/NotFound/NotFound';
 
 function App() {
   return (
@@ -24,20 +27,24 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route> 
         <Route path='/products' element={<Products></Products>}></Route> 
         <Route path='/product' element={<Product></Product>}></Route> 
-        <Route path='/updateProduct' element={<UpdateProducts></UpdateProducts>}></Route> 
+        <Route path='/ManageItems' element={<UpdateProducts></UpdateProducts>}></Route> 
         <Route path='/ProductDetails/:ProductId' element={
-         
-            <ProductDetails></ProductDetails>
-         
+         <RequireAuth>
+                     <ProductDetails></ProductDetails>
+                     </RequireAuth>
+  
         }></Route>
 
 
         
         <Route path='/proccedToPay' element={<ProccedToPay></ProccedToPay>}></Route> 
+        <Route path='/MyItems' element={<MyItems></MyItems>}></Route> 
+        <Route path='/AddItems' element={<AddItems></AddItems>}></Route> 
         <Route path='/about' element={<About></About>}></Route> 
         <Route path='/logIn' element={<LogIn></LogIn>}></Route> 
         <Route path='/signUp' element={<SignUp></SignUp>}></Route> 
         <Route path='/socialLogin' element={<SocialLogin></SocialLogin>}></Route> 
+        <Route path='*' element={<NotFound></NotFound>}></Route> 
 
        
       </Routes>
