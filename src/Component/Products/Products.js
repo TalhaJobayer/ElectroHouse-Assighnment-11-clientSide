@@ -12,8 +12,7 @@ const Products = () => {
     },[])
     return (
         <div className='container'>
-            <h1>this is products {products.length}</h1>
-            <div className="row">
+          <div className="row">
            {
                 products.map(product=><Product
                 key={product._id}

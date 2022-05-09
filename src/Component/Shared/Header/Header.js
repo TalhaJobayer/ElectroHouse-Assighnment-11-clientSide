@@ -25,6 +25,7 @@ const Header = () => {
     </Nav>
     <Nav className='menuText'>
      
+      <Link  to={'/upadateProduct'} >Update</Link>
       <Link  to={'/logIn'} >LogIn</Link>
       <Link to={'/signUp'} >SignUp</Link>
     </Nav>
