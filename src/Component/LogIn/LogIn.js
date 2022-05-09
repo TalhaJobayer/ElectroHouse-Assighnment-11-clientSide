@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import auth from '../../firebase.init';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import './LogIn.css'
 
 const LogIn = () => {
@@ -78,13 +79,13 @@ const LogIn = () => {
                                
                             </div>
                             <div className="form-group form-box clearfix">
-                                <input name="password" type="password" className="form-control" autocomplete="off" placeholder="Password" aria-label="Password"/>
+                                <input name="password" type="password" className="form-control"  placeholder="Password" aria-label="Password"/>
                                
                             </div>
                             <div className="checkbox form-group form-box">
                                 <div className="form-check float-start">
                                     <input className="form-check-input" type="checkbox" id="rememberme"/>
-                                    <label className="form-check-label" for="rememberme">
+                                    <label className="form-check-label" >
                                         Remember me
                                     </label>
                                 </div>
@@ -99,7 +100,9 @@ const LogIn = () => {
                             <div className="extra-login form-group clearfix">
                                 <span>Or Login With</span>
                             </div>
+                            
                         </form>
+                        <SocialLogin></SocialLogin>
                         <div className="clearfix"></div>
                        <p>Don't have an account? <Link style={{color:"blue"}} to={"/signUp"}>Register here</Link></p>
                        <Link onClick={resetPassword} style={{color:"blue"}} to={""}>Forgot your password?</Link>

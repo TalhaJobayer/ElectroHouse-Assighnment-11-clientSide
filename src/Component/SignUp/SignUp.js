@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useUpdateP
 import './SignUp.css'
 import auth from '../../firebase.init';
 import { updateProfile } from 'firebase/auth';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const SignUp = () => {
     const [Error ,setError]=useState('')
@@ -67,14 +68,14 @@ const SignUp = () => {
                                
                             </div>
                             <div className="form-group form-box clearfix">
-                                <input name="password" type="password" className="form-control" autocomplete="off" placeholder="Password" aria-label="Password"/>
+                                <input name="password" type="password" className="form-control"  placeholder="Password" aria-label="Password"/>
                                 <i className="flaticon-password"></i>
                             </div>
                             <div className="form-group checkbox form-box clearfix">
                                 <div className="clearfix float-start">
                                     <div className="form-check">
                                         <input className="form-check-input" type="checkbox" id="rememberme"/>
-                                        <label className="form-check-label" for="rememberme">
+                                        <label className="form-check-label">
                                             I agree to the terms of service
                                         </label>
                                     </div>
@@ -89,6 +90,7 @@ const SignUp = () => {
                                 <span>Or Login With</span>
                             </div>
                         </form>
+                        <SocialLogin></SocialLogin>
                         <div className="clearfix"></div>
                         
                         <p>Already a member? <Link style={{color:"blue"}} to={"/Login"}>Login</Link></p>

@@ -10,6 +10,7 @@ import SignUp from './Component/SignUp/SignUp';
 import Products from './Component/Products/Products';
 import Product from './Component/Home/Product/Product';
 import UpdateProducts from './Component/Admin/UpdateProducts/UpdateProducts';
+import SocialLogin from './Component/Shared/SocialLogin/SocialLogin';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path='/about' element={<About></About>}></Route> 
         <Route path='/logIn' element={<LogIn></LogIn>}></Route> 
         <Route path='/signUp' element={<SignUp></SignUp>}></Route> 
+        <Route path='/socialLogin' element={<SocialLogin></SocialLogin>}></Route> 
+
        
       </Routes>
       <Footer></Footer>
