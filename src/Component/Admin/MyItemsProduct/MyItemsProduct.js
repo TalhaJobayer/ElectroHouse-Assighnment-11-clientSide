@@ -18,8 +18,10 @@ const MyItemsProduct = ({product}) => {
         <h3>Price:${Price}</h3>
         <h5>Quantity:{quantity}</h5>
         <h5>Supplier:{supplier}</h5>
-        <p></p>
-        <button   className="btn btn-primary" >Delete</button>
+        
+        <button   className="btn btn-primary " style={{marginRight:'15px'}} >Delete</button>
+        
+        <button  className="btn btn-primary  " >Delevered</button>
       </div>
     </div>
                 
