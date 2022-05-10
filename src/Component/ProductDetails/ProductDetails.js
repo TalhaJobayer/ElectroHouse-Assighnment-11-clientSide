@@ -6,12 +6,12 @@ import UseProductDetails from '../../UseHook/UseProductDetails/UseProductsDetail
 
 
 const ProductDetails = () => {
-  const  {ProductId}=useParams()
-  const [products]=UseProductDetails(ProductId)
+  const  {InventoryID}=useParams()
+  const [products]=UseProductDetails(InventoryID)
   
     return (
         <div>
-             <h1>wellcome to this course:  {ProductId}</h1>
+             <h1>wellcome to this course:  {InventoryID}</h1>
             <h2>{products.length}</h2>
              
              <Link to={'/proccedToPay'}>

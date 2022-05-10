@@ -2,7 +2,7 @@ import React from 'react';
 
 import UseProducts from '../../../UseHook/UseProducts/UseProducts';
 
-const MyItemsProduct = ({product,handleDelete}) => {
+const MyItemsProduct = ({product,handleDelete,handleDelivery}) => {
   const [products,setProducts]=UseProducts();
  
         
@@ -24,7 +24,10 @@ const MyItemsProduct = ({product,handleDelete}) => {
         
         <button onClick={()=>handleDelete(_id)}   className="btn btn-primary " style={{marginRight:'15px'}} >Delete</button>
         
-        <button  className="btn btn-primary  " >Delevered</button>
+        {
+          quantity?<button onClick={()=>handleDelivery (_id)}   className="btn btn-primary  " >Delevered</button>:<button onClick={()=>handleDelivery (_id)}   className="btn btn-danger  " >Delevered</button>
+        }
+        
       </div>
     </div>
                 

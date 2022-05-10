@@ -11,3 +11,10 @@
     font-size: 50px;
     font-weight: 800;
 }
+.left{
+  width: 330px;
+  height: 1px;
+ margin-top: 40px;
+ 
+  background-color: rgb(156, 154, 154);
+}

@@ -7,7 +7,7 @@ const Product = ({product}) => {
 
     const {_id,name,image,Price,supplier}=product
     const handleSingleDetailes=id=>{
-      Navigate(`/ProductDetails/${id}`)
+      Navigate(`/Inventory/${id}`)
     }
     
     return (

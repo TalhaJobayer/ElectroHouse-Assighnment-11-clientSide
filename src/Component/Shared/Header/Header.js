@@ -41,11 +41,9 @@ const Header = () => {
           user?<Link  to={'/ManageItems'} >Manage Items</Link>: ''
         }
       {
-          user?<Link  to={'/MyItems'} >My Items</Link>: ''
+          user?<Link  to={'/MyItems'} >Manage Inventory</Link>: ''
         }
-      {
-          user?<Link  to={'/AddItems'} >Add Items</Link>: ''
-        }
+      
       
       
       
