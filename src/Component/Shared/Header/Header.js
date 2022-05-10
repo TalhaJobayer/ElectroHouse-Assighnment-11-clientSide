@@ -31,7 +31,7 @@ const Header = () => {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto menuText">
        <Link  to={'/home'} >Home</Link>
-      <Link to={'/about'} >About</Link>
+      <Link to={'/blog'} >Blog</Link>
      
     </Nav>
     <Nav className='menuText'>
@@ -39,7 +39,7 @@ const Header = () => {
       
     
       {
-          user?<Link  to={'/MyItems'} >Manage Inventory</Link>: ''
+          user?<Link  to={'/MyItems'} >MY Item</Link>: ''
         }
       
       

@@ -4,7 +4,7 @@ const UseProductDetails = (InventoryID) => {
     
     const [products,setProducts]=useState({})
     useEffect(()=>{
-        const url=`http://localhost:5000/gadgets/${InventoryID}`
+        const url=`https://guarded-eyrie-02330.herokuapp.com/gadgets/${InventoryID}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>setProducts(data))

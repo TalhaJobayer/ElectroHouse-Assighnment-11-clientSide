@@ -13,7 +13,7 @@ const MyItems = () => {
     const handleDelete=(id)=>{
         const procced=window.confirm('Are you sure?')
         if(procced){
-          const url=`http://localhost:5000/gadgets/${id}`
+          const url=`https://guarded-eyrie-02330.herokuapp.com/gadgets/${id}`
              fetch(url,{
                method:"DELETE"
              })

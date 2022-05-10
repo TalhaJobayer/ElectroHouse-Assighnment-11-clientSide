@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = () => {
+const Blog = () => {
     return (
         <div>
-            <h3>this is about</h3>
+           <h1>blog</h1> 
         </div>
     );
 };
 
-export default About;
+export default Blog;

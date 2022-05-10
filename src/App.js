@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Component/Home/Home';
 import Header from './Component/Shared/Header/Header';
 import Footer from './Component/Shared/Footer/Footer';
-import About from './Component/About/About';
+
 import LogIn from './Component/LogIn/LogIn';
 import SignUp from './Component/SignUp/SignUp';
 import Products from './Component/Products/Products';
@@ -17,6 +17,7 @@ import ProccedToPay from './Component/ProccedToPay/ProccedToPay';
 import MyItems from './Component/Admin/MyItems/MyItems';
 import AddItems from './Component/Admin/AddItems/AddItems';
 import NotFound from './Component/NotFound/NotFound';
+import Blog from './Component/Blog/Blog';
 
 function App() {
   return (
@@ -42,7 +43,7 @@ function App() {
         <Route path='/proccedToPay' element={<ProccedToPay></ProccedToPay>}></Route> 
         <Route path='/MyItems' element={<MyItems></MyItems>}></Route> 
         <Route path='/AddItems' element={<AddItems></AddItems>}></Route> 
-        <Route path='/about' element={<About></About>}></Route> 
+        <Route path='/blog' element={<Blog></Blog>}></Route> 
         <Route path='/logIn' element={<LogIn></LogIn>}></Route> 
         <Route path='/signUp' element={<SignUp></SignUp>}></Route> 
         <Route path='/socialLogin' element={<SocialLogin></SocialLogin>}></Route> 
