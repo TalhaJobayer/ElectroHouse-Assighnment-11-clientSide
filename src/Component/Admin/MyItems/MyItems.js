@@ -1,17 +1,29 @@
 import { Button } from 'bootstrap';
 import React, { useEffect, useState } from 'react';
+import UseProducts from '../../../UseHook/UseProducts/UseProducts';
 
 import MyItemsProduct from '../MyItemsProduct/MyItemsProduct';
 
 const MyItems = () => {
-    const [products,setProducts]=useState([])
-    useEffect(()=>{
-        const url=`http://localhost:5000/gadgets`
-        fetch(url)
-        .then(res=>res.json())
-        .then(data=>setProducts(data))
-
-    },[])
+    const [products,setProducts]=UseProducts()
+    const handleDelete=(id)=>{
+        const procced=window.confirm('Are you sure?')
+        if(procced){
+          const url=`http://localhost:5000/gadgets/${id}`
+             fetch(url,{
+               method:"DELETE"
+             })
+             .then(res=>res.json())
+             .then(data=>{
+               console.log('success',data)
+               const remaining=products.filter(singelproduct=>singelproduct._id !==id)
+               console.log(remaining);
+               setProducts(remaining)
+             })
+             
+        }
+      }
+   
     return (
         <div>
             <h1>my items</h1>
@@ -20,7 +32,7 @@ const MyItems = () => {
            {
                 products.map(product=><MyItemsProduct
                 key={product._id}
-
+                handleDelete={handleDelete}
                 product={product}
                 ></MyItemsProduct>)
             }

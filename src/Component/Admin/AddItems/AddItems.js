@@ -12,7 +12,7 @@ const AddItems = () => {
         const quantity=event.target.quantity.value
         const newProduct={name,Price,supplier,image,quantity}
        
-        fetch(`http://localhost:5000/product`,{
+        fetch(`http://localhost:5000/gadgets`,{
             method:'POST',
             headers:{
                 "Content-Type":"application/json"
@@ -22,8 +22,9 @@ const AddItems = () => {
        .then(res=>res.json())
        .then(data=>{
         alert('added succesfully')
+        event.target.reset()
       console.log('Success:', data);
-      event.target.reset()
+      
     })
 
     }

@@ -1,11 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const MyItemsProduct = ({product}) => {
-  
-        const Navigate=useNavigate()
+import UseProducts from '../../../UseHook/UseProducts/UseProducts';
+
+const MyItemsProduct = ({product,handleDelete}) => {
+  const [products,setProducts]=UseProducts();
+ 
+        
 
         const {_id,name,image,Price,supplier,quantity}=product
+        
         
         
         return (
@@ -19,7 +22,7 @@ const MyItemsProduct = ({product}) => {
         <h5>Quantity:{quantity}</h5>
         <h5>Supplier:{supplier}</h5>
         
-        <button   className="btn btn-primary " style={{marginRight:'15px'}} >Delete</button>
+        <button onClick={()=>handleDelete(_id)}   className="btn btn-primary " style={{marginRight:'15px'}} >Delete</button>
         
         <button  className="btn btn-primary  " >Delevered</button>
       </div>
