@@ -9,7 +9,7 @@ import LogIn from './Component/LogIn/LogIn';
 import SignUp from './Component/SignUp/SignUp';
 import Products from './Component/Products/Products';
 import Product from './Component/Home/Product/Product';
-import UpdateProducts from './Component/Admin/UpdateProducts/UpdateProducts';
+
 import SocialLogin from './Component/Shared/SocialLogin/SocialLogin';
 import ProductDetails from './Component/ProductDetails/ProductDetails';
 import RequireAuth from './Component/Shared/RequireAuth/RequireAuth';
@@ -27,9 +27,9 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route> 
         <Route path='/products' element={<Products></Products>}></Route> 
         <Route path='/product' element={<Product></Product>}></Route> 
-        <Route path='/ManageItems' element={<UpdateProducts></UpdateProducts>}></Route>
+       
          {/*invenory=productDetails  */}
-         {/*InventoryID=productID  */}
+         {/*invenory=productDetails  */}
         <Route path='/Inventory/:InventoryID' element={
          <RequireAuth>
                      <ProductDetails></ProductDetails>
@@ -51,7 +51,7 @@ function App() {
        
       </Routes>
       <Footer></Footer>
-      {/* https://andshop-react.netlify.app/electronics#offcanvas-about */}
+      
     </div>
   );
 }

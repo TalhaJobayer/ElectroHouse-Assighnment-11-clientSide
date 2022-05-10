@@ -37,9 +37,7 @@ const Header = () => {
     <Nav className='menuText'>
      
       
-      {
-          user?<Link  to={'/ManageItems'} >Manage Items</Link>: ''
-        }
+    
       {
           user?<Link  to={'/MyItems'} >Manage Inventory</Link>: ''
         }

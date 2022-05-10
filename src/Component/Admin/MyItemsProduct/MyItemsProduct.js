@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import UseProducts from '../../../UseHook/UseProducts/UseProducts';
+
 
 const MyItemsProduct = ({product,handleDelete,handleDelivery}) => {
-  const [products,setProducts]=UseProducts();
  
+ 
+     
         
-
+       
         const {_id,name,image,Price,supplier,quantity}=product
-        
+       
         
         
         return (
@@ -20,6 +21,7 @@ const MyItemsProduct = ({product,handleDelete,handleDelivery}) => {
         <h5 className="card-title">{name}</h5>
         <h3>Price:${Price}</h3>
         <h5>Quantity:{quantity}</h5>
+
         <h5>Supplier:{supplier}</h5>
         
         <button onClick={()=>handleDelete(_id)}   className="btn btn-primary " style={{marginRight:'15px'}} >Delete</button>
@@ -27,7 +29,7 @@ const MyItemsProduct = ({product,handleDelete,handleDelivery}) => {
         {
           quantity?<button onClick={()=>handleDelivery (_id)}   className="btn btn-primary  " >Delevered</button>:<button onClick={()=>handleDelivery (_id)}   className="btn btn-danger  " >Delevered</button>
         }
-        
+          
       </div>
     </div>
                 
