@@ -1,10 +1,31 @@
-import React from 'react';
+import { Button } from 'bootstrap';
+import React, { useEffect, useState } from 'react';
+
+import MyItemsProduct from '../MyItemsProduct/MyItemsProduct';
 
 const MyItems = () => {
+    const [products,setProducts]=useState([])
+    useEffect(()=>{
+        const url=`http://localhost:5000/gadgets`
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>setProducts(data))
+
+    },[])
     return (
         <div>
             <h1>my items</h1>
-            <p>On the My Items page, the logged-in user will see only his/her Items. If the user wants, he/she should be able to cancel/delete any item. Ask for a confirmation message before deleting or canceling an item. Using browser confirmation dialog is ok. So, you will be able to delete an item either from the Manage Inventories page also, from the My Items page.</p>
+            <div className='container'>
+          <div className="row">
+           {
+                products.map(product=><MyItemsProduct
+                key={product._id}
+
+                product={product}
+                ></MyItemsProduct>)
+            }
+           </div>
+        </div>
         </div>
     );
 };
