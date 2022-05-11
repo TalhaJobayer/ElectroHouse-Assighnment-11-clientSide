@@ -29,10 +29,10 @@ const Footer = () => {
           <h6 className="text-uppercase fw-bold mb-4">
             Products
           </h6>
-          <p>Angular</p>
-          <p>  React</p>
-          <p>  Vue</p>
-          <p>Laravel</p>
+          <p>Headphones</p>
+          <p>  Powerbank</p>
+          <p>  Tablet</p>
+          <p>Laptop</p>
         </div>
         
 
