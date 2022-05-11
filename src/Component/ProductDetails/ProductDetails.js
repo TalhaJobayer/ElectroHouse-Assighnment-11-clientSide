@@ -40,7 +40,7 @@ const ProductDetails = () => {
         
           <form className='m-3' onSubmit={handleReStock}>
            <div className="form-group form-box clearfix mb-2">
-                                <input name="reStock" type="number" className="form-control" placeholder="Update Quantity" />
+                                <input name="reStock" type="number" className="form-control" placeholder="Update Quantity" required/>
                                
                             </div>
                             <button  type="submit" className="btn btn-primary" >stock updates</button>

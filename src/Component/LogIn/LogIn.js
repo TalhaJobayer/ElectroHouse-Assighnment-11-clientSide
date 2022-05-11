@@ -76,11 +76,11 @@ const LogIn = () => {
                         <h3>Sign Into Your Account</h3>
                         <form onSubmit={handleSubmitSignIn}>
                             <div className="form-group form-box clearfix">
-                                <input name="email" ref={emailRef} type="email" className="form-control" placeholder="Email Address" aria-label="Email Address"/>
+                                <input name="email" ref={emailRef} type="email" className="form-control" placeholder="Email Address" aria-label="Email Address" required/>
                                
                             </div>
                             <div className="form-group form-box clearfix">
-                                <input name="password" type="password" className="form-control"  placeholder="Password" aria-label="Password"/>
+                                <input name="password" type="password" className="form-control"  placeholder="Password" aria-label="Password" required/>
                                
                             </div>
                             <div className="checkbox form-group form-box">

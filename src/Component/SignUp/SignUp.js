@@ -61,16 +61,16 @@ const SignUp = () => {
                         <h3>Create An Cccount</h3>
                         <form  onSubmit={handleSubmit} >
                             <div className="form-group form-box">
-                                <input name="name" type="text" className="form-control" placeholder="Full Name" aria-label="Full Name"/>
+                                <input name="name" type="text" className="form-control" placeholder="Full Name" aria-label="Full Name" required/>
                                
                             </div>
                             <div className="form-group form-box">
-                                <input name="email" type="email" className="form-control" placeholder="Email Address" aria-label="Email Address"/>
+                                <input name="email" type="email" className="form-control" placeholder="Email Address" aria-label="Email Address" required/>
                                
                             </div>
                             <div className="form-group form-box clearfix">
-                                <input name="password" type="password" className="form-control"  placeholder="Password" aria-label="Password"/>
-                                <i className="flaticon-password"></i>
+                                <input name="password" type="password" className="form-control"  placeholder="Password" aria-label="Password" required/>
+                               
                             </div>
                             <div className="form-group checkbox form-box clearfix">
                                 <div className="clearfix float-start">
