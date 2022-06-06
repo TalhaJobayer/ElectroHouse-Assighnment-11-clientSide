@@ -12,7 +12,7 @@ const AddItems = () => {
         const quantity=event.target.quantity.value
         const newProduct={name,Price,supplier,image,quantity}
        
-        fetch(`https://guarded-eyrie-02330.herokuapp.com/gadgets`,{
+        fetch(`https://ancient-cove-19850.herokuapp.com/gadgets`,{
             method:'POST',
             headers:{
                 "Content-Type":"application/json"

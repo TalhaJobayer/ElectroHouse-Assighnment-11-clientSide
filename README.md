@@ -1,7 +1,7 @@
 # Project Name:
 ## Electro House
 ===========================
-## Live-server-server-side: https://guarded-eyrie-02330.herokuapp.com/
+## Live-server-server-side: https://ancient-cove-19850.herokuapp.com/
 ## Live-client -server : https://electrohouse-b4eae.firebaseapp.com/
 ## Git-repo-client: https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-TalhaJobayer
 ## Git-repo-server: https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-TalhaJobayer
