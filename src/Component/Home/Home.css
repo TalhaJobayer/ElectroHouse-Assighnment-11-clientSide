@@ -1,7 +1,7 @@
 .carousel-caption {
     position: absolute;
   
-    top: 7rem;
+    top: 7rem !important;
   left: -48%;
     
     color: rgb(0, 0, 0);
@@ -18,3 +18,29 @@
  
   background-color: rgb(156, 154, 154);
 }
+@media (max-width: 600px) {
+  .carousel-caption {
+    position: absolute;
+    top: 1rem !important;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    left: 20%;
+}
+.carousel-caption h1{
+  font-size: 25px;
+  font-weight: 800;
+  padding: 0px;
+  margin-bottom: 0.1rem;
+
+}
+.carousel-caption h4{
+  margin-top:-10px;
+  font-size: 17px;
+  
+}
+.carousel-caption h5{
+  padding-bottom: 0px;
+  margin-bottom: -8px;
+}
+
+ }
